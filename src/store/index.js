@@ -1,5 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import Axios from 'axios';
+
+const API = 'https://my-json-server.typicode.com/alexlibre/solvo-test';
 
 Vue.use(Vuex);
 
@@ -7,26 +10,21 @@ export default new Vuex.Store({
   state: {
     login: '',
     password: '',
-    journal: [
-      {
-        id: 1,
-        text: 'Entry 1',
-        timestamp: new Date(),
-      },
-      {
-        id: 2,
-        text: 'Entry 2',
-        timestamp: new Date(),
-      },
-    ],
+    posts: [],
   },
   getters: {
-    getAll: (state) => state.journal,
-    getDone: (state) => state.journal.filter((item) => item.done),
+    getAll: (state) => state.posts,
   },
   mutations: {
+    SET_POSTS: (state, payload) => {
+      state.posts = payload;
+    },
   },
   actions: {
+    GET_POSTS: async (context) => {
+      const { data } = await Axios.get(`${API}/posts`);
+      context.commit('SET_POSTS', data);
+    },
   },
   modules: {
   },

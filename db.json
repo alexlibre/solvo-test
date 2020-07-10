@@ -2,7 +2,13 @@
     "posts": [
       {
         "id": 1,
-        "text": "hello"
+        "title": "Entry 1",
+        "text": "Element not available"
+      },
+      {
+        "id": 2,
+        "title": "Entry 2",
+        "text": "Element is available"
       }
     ],
     "auth": {
