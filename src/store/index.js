@@ -11,13 +11,11 @@ export default new Vuex.Store({
       {
         id: 1,
         text: 'Entry 1',
-        done: true,
         timestamp: new Date(),
       },
       {
         id: 2,
         text: 'Entry 2',
-        done: false,
         timestamp: new Date(),
       },
     ],

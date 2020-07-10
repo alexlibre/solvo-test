@@ -1,0 +1,12 @@
+{
+    "posts": [
+      {
+        "id": 1,
+        "text": "hello"
+      }
+    ],
+    "auth": {
+      "login": "admin",
+      "password": "admin"
+    }
+  }
