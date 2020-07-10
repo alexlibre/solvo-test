@@ -5,6 +5,26 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    login: '',
+    password: '',
+    journal: [
+      {
+        id: 1,
+        text: 'Entry 1',
+        done: true,
+        timestamp: new Date(),
+      },
+      {
+        id: 2,
+        text: 'Entry 2',
+        done: false,
+        timestamp: new Date(),
+      },
+    ],
+  },
+  getters: {
+    getAll: (state) => state.journal,
+    getDone: (state) => state.journal.filter((item) => item.done),
   },
   mutations: {
   },
